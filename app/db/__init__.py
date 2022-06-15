@@ -12,8 +12,11 @@ engine = create_engine(getenv('DB_URL'), echo=True, pool_size=20, max_overflow=0
 Session = sessionmaker(bind=engine)
 Base = declarative_base()
 
-def init_db():
+def init_db(app):
   Base.metadata.create_all(engine)
+
+  # flask will run close_db whenever a context is destroyed
+  app.teardown_appcontext(close_db)
 
 def get_db():
   if 'db' not in g:
@@ -21,3 +24,10 @@ def get_db():
     g.db = Session()
 
   return g.db
+
+# close database connection
+def close_db(e=None):
+  db = g.pop('db', None)
+
+  if db is not None:
+    db.close()
