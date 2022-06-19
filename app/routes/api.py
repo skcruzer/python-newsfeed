@@ -40,3 +40,34 @@ def signup():
   session['loggedIn'] = True
 
   return jsonify(id = newUser.id)
+
+# POST route to logout user
+@bp.route('/users/logout', methods=['POST'])
+def logout():
+  # remove session variables
+  session.clear()
+  return '', 204
+
+# POST route to login user
+@bp.route('/users/login', methods=['POST'])
+def login():
+  data = request.get_json()
+  db = get_db()
+
+  try:
+    user = db.query(User).filter(User.email == data['email']).one()
+  except:
+    print(sys.exc_info()[0])
+
+    return jsonify(message = 'Incorrect credentials'), 400
+
+  # verify password at login
+  if user.verify_password(data['password']) == False:
+    return jsonify(message = 'Incorrect credentials'), 400
+
+  # create user session after logged in
+  session.clear()
+  session['user_id'] = user.id
+  session['loggedIn'] = True
+
+  return jsonify(id = user.id)
