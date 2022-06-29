@@ -1,30 +1,34 @@
-# python-newsfeed
 
+<img src='https://img.shields.io/badge/License-Apache 2.0-yellow.svg'>
 
-**User Stories**
+<h1> Just Tech News - Python </h1>
+<h2> Description </h2>
+<p> A website where users can post, upvote, and comment on links to news articles. Python is used to create the app and the Python Flask framework to create the application's views. SQLAlchemy is used to connect the application to a relaional database. This website is currently deployed on Heroku. </p>
+<h2> Table of Contents </h2>
+<details open='open'>
+<summary>Table of Contents</summary>
+<ol>
+<li><a href='#installation'>Installation</a></li>
+<li><a href='#usage'>Usage</a></li>
+<li><a href='#contribution'>Contribution</a></li>
+<li><a href='#tests'>Tests</a></li>
+<li><a href='#questions'>Questions</a></li>
+</details>
 
-**Set up app to render templates:** 
+## <h3 id='installation'>Installation</h3>
+<p> This applicaion requires a local <code>MySQL</code> server. To install, simply clone this repo to your local device by running the command <code>git clone https://github.com/skcruzer/python-newsfeed.git</code>. </p>
 
-* As a user, I want to be able to view the home and dashboard pages in the browser
+## <h3 id='usage'>Usage</h3>
+<p> This application is currently deployed on Heroku, you can access by click on the following link: . Sign up so you can contribute! </p>
 
-**Set up database and models:** 
+## <h3 id='contribution'>Contributing</h3>
+<p> Functionalities and styling are still being added to this application. If you would like to contribute or provide any feedback, please contact me. You can find my contact information below in the <a href='#questions'>Questions</a> section. </p>
 
-* As a user, I need a database that can store my account, posts, comments, or upvotes
+## <h3 id='testing'>Tests</h3>
+<p> No testing was required. </p>
 
-**Finalize homepage views with data and filters:** 
+## <h3 id='questions'>Questions</h3>
+<p>Have questions? Please feel free to reach out to me on github at <a href='https://github.com/skcruzer'target='_blank'>skcruzer</a> or by email at <a href='mailto:seankennethcruz@gmail.com'target='_blank'>seankennethcruz@gmail.com</a>.</p>
 
-* As a user, I want to be able to see my posts on the homepage
-
-* I expect to see dates, URLs, and plural words properly formatted
-
-**Implement user logins and sessions:** 
-
-* As a user, I want to be able to log in and have my session remembered if I refresh the page
-
-**Build and safeguard remaining routes:** 
-
-* As a logged-in user, I want to be able to create new posts and comments and upvote other posts
-
-**Deploy the app:** 
-
-* As a user, I want to be able to visit the app on a public URL
+- - -
+© 2022 Skcruzer, Inc. All Rights Reserved. 
